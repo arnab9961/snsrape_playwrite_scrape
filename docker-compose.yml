@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  blackglass-api:
+    build: .
+    container_name: blackglass-api-new
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./reports:/app/reports
+    restart: unless-stopped
+    environment:
+      - LOG_LEVEL=INFO
